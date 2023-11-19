@@ -8,7 +8,7 @@
 import UIKit
 
 final class TableViewCell: UITableViewCell {
-
+    
     // MARK: - Properties
     private let mainStackView: UIStackView = {
         let stackView = UIStackView()
@@ -17,10 +17,10 @@ final class TableViewCell: UITableViewCell {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.isLayoutMarginsRelativeArrangement = true
         stackView.layoutMargins = .init(top: 10, left: 10, bottom: 0, right: -10)
-    
+        
         return stackView
     }()
-
+    
     private let factLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
@@ -39,7 +39,7 @@ final class TableViewCell: UITableViewCell {
         addSubviews()
         setupConstraints()
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -47,7 +47,7 @@ final class TableViewCell: UITableViewCell {
     // MARK: - PrepareForReuse
     override func prepareForReuse() {
         super.prepareForReuse()
-    
+        
         factLabel.text = nil
     }
     
@@ -63,15 +63,14 @@ final class TableViewCell: UITableViewCell {
     }
     
     private func setupConstraints() {
-            NSLayoutConstraint.activate([
-                mainStackView.topAnchor.constraint(equalTo: topAnchor, constant: 10),
-                mainStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-                mainStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
-                mainStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)
-            ])
-            
-        }
-
-    
+        NSLayoutConstraint.activate([
+            mainStackView.topAnchor.constraint(equalTo: topAnchor, constant: 10),
+            mainStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            mainStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
+            mainStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)
+        ])
+        
     }
+    
+}
 

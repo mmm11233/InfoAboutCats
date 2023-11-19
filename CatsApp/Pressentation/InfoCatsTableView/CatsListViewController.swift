@@ -9,7 +9,7 @@ import UIKit
 import Networking
 
 final class CatsListViewController: UIViewController {
-
+    
     // MARK: - Properties
     private let tableView: UITableView = {
         let tableView = UITableView()
@@ -25,9 +25,9 @@ final class CatsListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .gray
-        tableView.estimatedRowHeight = 100 
+        tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableView.automaticDimension
-
+        
         setupSubviews()
         setupConstrains()
         setupTableView()
@@ -57,6 +57,6 @@ final class CatsListViewController: UIViewController {
         viewModel = CatsListViewModel(catsService: catsService)
         dataSource = CatsDataSourse(tableView: tableView, viewModel: viewModel)
     }
-
+    
 }
 

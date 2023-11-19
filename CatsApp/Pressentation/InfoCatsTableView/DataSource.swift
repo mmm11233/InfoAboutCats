@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 // MARK: - TableVIew DataSource
 final class CatsDataSourse: NSObject, UITableViewDataSource, UITableViewDelegate {
     
@@ -37,8 +38,6 @@ final class CatsDataSourse: NSObject, UITableViewDataSource, UITableViewDelegate
             cell.configure(with: cats[indexPath.row])
             return cell
         }
-     return UITableViewCell()
+        return UITableViewCell()
     }
-    
-
 }

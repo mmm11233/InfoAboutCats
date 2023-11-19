@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import Networking
 
 public class CatsService {
     private let webServiceManager: WebServiceManaging
@@ -19,6 +19,7 @@ public class CatsService {
         guard let url = URL(string: "https://catfact.ninja/facts") else {
             return
         }
+        
         webServiceManager.httpGet(url: url) { (result: Result<CatsResponse, Error>) in
             switch result {
             case let .success(response):
